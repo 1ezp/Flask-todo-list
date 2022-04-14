@@ -15,8 +15,12 @@
                         <h4 role="alert">
                             {{ message }}
                         </h4>
+                    {% elif category == 'success'%}
+                    <h4 style="color: rgb(13, 202, 79);">
+                        {{ message }}
+                    </h4>
                     {% else %}
-                        <h4 style="color: rgb(13, 202, 79);">
+                        <h4 role="alert">
                             {{ message }}
                         </h4>
                     {% endif %}
