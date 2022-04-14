@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title%}Home{% endblock %}
+
+{% block content %}
+<div class="background">
+  <div class="shape"></div>
+  <div class="shape"></div>
+</div>
+
+  <div class="wrapper">
+    
+    <header>Todo List</header>
+    <div class="inputField">
+      <input type="text" placeholder="Add your new todo" id="job">
+      <button onclick="Addjob(5465)"><i class="fas fa-plus"></i></button>
+    </div>
+
+    <ul class="todoList">
+      {% for i in user.lists %}
+      <li>{{ i.title }} <button onclick="Deletejob({{ i.id }})"><i class="fas fa-trash"></i></button></li>
+      {% endfor %}
+    </ul>
+    <div class="footer">
+      <span>You have <span class="pendingTasks">{{ user.lists|length }}</span> pending tasks.</span>
+      <button><a href="/logout"><i class="fa-solid fa-arrow-right-from-bracket"></i></a></button>
+    </div>
+  </div>
+
+{% endblock %}

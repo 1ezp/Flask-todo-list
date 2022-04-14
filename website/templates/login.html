@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title%}Login{% endblock %}
+
+{% block content %}
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form action="" method="post">
+        <h3>Login Here</h3>
+        {% with messages = get_flashed_messages(with_categories=True) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    {% if category == 'error'%}
+                        <h4 role="alert">
+                            {{ message }}
+                        </h4>
+                    {% else %}
+                        <h4 style="color: rgb(13, 202, 79);">
+                            {{ message }}
+                        </h4>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <label for="Email">Email</label>
+        <input type="email" placeholder="Email" id="email" name="email" class="input1">
+
+        <label for="password">Password</label>
+        <input type="password" placeholder="Password" id="password" name="password" class="input1">
+
+        <button type="submit" class="button1">Login</button>
+        <label for="signup">If you don't have account <a href="/signup">Sign Up</a></label>
+        </div>
+    </form>
+{% endblock %}
