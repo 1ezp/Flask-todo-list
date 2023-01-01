@@ -12,6 +12,7 @@ def create_app():
     app.config['SECRET_KEY'] = 'to do flask app'
     #app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
     app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://epiz_33297024:m0G8cGJpkai9@sql109.epizy.com/epiz_33297024_flasktodolist4'
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     db.init_app(app)
     
     from .views import views
