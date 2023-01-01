@@ -23,7 +23,7 @@ def create_app():
     
     
     from .models import User,List
-    #create_database(app)
+    create_database(app)
 
     login_manger = LoginManager()
     login_manger.login_view = 'auth.login'
@@ -38,3 +38,4 @@ def create_app():
 def create_database(app):
     db.create_all(app=app)
     print('Created Database!')
+
