@@ -11,7 +11,7 @@ def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = 'to do flask app'
     #app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://nfhqphgqeyhxsi:969df064f6201abe1bee5a369489613a3a4578657f5f1658017a6a64bf664576@ec2-54-80-123-146.compute-1.amazonaws.com:5432/ddqmtqmbt400go'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://epiz_33297024:m0G8cGJpkai9@sql109.epizy.com/epiz_33297024_flasktodolist4'
     db.init_app(app)
     
     from .views import views
