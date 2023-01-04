@@ -11,7 +11,7 @@ def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = 'to do flask app'
     #app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://epiz_33297024:m0G8cGJpkai9@sql109.epizy.com/epiz_33297024_flasktodolist4'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://doadmin:AVNS_hoAWeoEE8JbrjFRMU3H@dbaas-db-7045799-do-user-13240115-0.b.db.ondigitalocean.com:25060/defaultdb'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     db.init_app(app)
     
@@ -25,8 +25,7 @@ def create_app():
     
     from .models import User,List
     #create_database(app)
-    db.create_all(app=app)
-    print('Created Database!')
+
     login_manger = LoginManager()
     login_manger.login_view = 'auth.login'
     login_manger.init_app(app)
